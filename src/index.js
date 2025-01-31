@@ -1,32 +1,15 @@
-
-const persona = {
-    nombre: 'tony',
-    edad: 45,
-    clave: 'ironman',
-};
-
-const ejemplo2 = {
-    nombre: 'jinx',
-    edad: 17,
-    clave: 'clavelin',
-};
+import {heroes} from "./data/heroes.js";
 
 
-const useContext = ({clave,edad}) => {
-
-   return {
-       nombreClave: clave,
-       anios: edad,
-       latlng:{
-           lat:14.454,
-           lng:20.246
-       }
-   }
-}
-
-const {nombreClave, anios, latlng:{lat, lng}} = useContext(persona);
-
-console.log(nombreClave, anios)
-console.log(lat,lng)
+/*const getHeroeById = (id) =>  {
+    return heroes.find((heroe) => {
+        if (heroe.id === id) {
+            return true;
+        } else {
+            return false;
+        }
+    });
+}*/
 
 
+console.log(getHeroeById(2));
