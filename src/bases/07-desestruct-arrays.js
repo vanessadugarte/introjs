@@ -20,4 +20,4 @@ const useState = (valor) => {
 const [nombre, setNombre] = useState('Planta');
 
 console.log(nombre);
-setNombre('HI');
+setNombre('HIcommitgit');
