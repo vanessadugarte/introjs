@@ -1,38 +1,5 @@
-import { getHeroeById } from "./bases/08-imp-exp.js";
+const apiKey =  'OHLxZzT4AsX0YjLT5DkIq9wtLxpc0SUT';
 
-const getHeroeByIdAsync = (id) => {
-    return new Promise((resolve,reject) => {
+const peticion = fetch(`http://api.giphy.com/v1/gifs/trending?api_key=${apiKey}`);
 
-        setTimeout( () => {
-            const p1 = getHeroeById(id);
-            if (p1) {
-                resolve(p1);
-            } else {
-                reject ('no se pudo encontrar nada')
-            }
-        }, 2000)
-    });
-
-}
-
-getHeroeByIdAsync(13)
-    .then(console.log)
-    .catch(console.warn);
-
-
-const myPromise = new Promise((resolve, reject) => {
-    setTimeout(() => {
-        let randomValue = Math.random(); // 🎲 Genera un número aleatorio
-        console.log("🔢 Valor de Math.random():", randomValue); // 📌 Lo mostramos en consola
-
-        if (randomValue > 0.5) {
-            resolve("foo");  // ✅ Éxito
-        } else {
-            reject("Error: algo salió mal");  // ❌ Falla
-        }
-    }, 300);
-});
-
-myPromise
-    .then((resultado) => console.log("✅ Éxito:", resultado))
-    .catch((error) => console.error("❌ Error:", error));
+peticion.then(resp => console.log(resp));
